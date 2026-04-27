@@ -8,7 +8,7 @@ export default function GameCards({ game }){
     <>
       <div>
         <Link to={`/games/${game.id}`} className="text-decoration-none text-black">
-          <h2>{title}</h2>
+          <h3>{title}</h3>
         </Link>
         <p>{category}</p>
         <p>{description}</p>
