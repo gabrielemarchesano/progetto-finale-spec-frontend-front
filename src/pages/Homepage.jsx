@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import GameCards from "../components/GameCards";
+import Comparator from "../components/Comparator";
 
 export default function Homepage(){
 
@@ -101,7 +102,7 @@ export default function Homepage(){
           <div className="row">
           {
             sortedAndFilteredGames.map(game => (
-              <div key={game.id} className="col-4">
+              <div key={game.id} className="col-4 p-5">
                 <GameCards game={game} />
               </div>
             ))
@@ -109,6 +110,8 @@ export default function Homepage(){
           </div>
 
         </div>
+
+          <Comparator />
 
       </div>
     </>
