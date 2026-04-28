@@ -7,7 +7,7 @@ export default function Navbar(){
         <h1>Compare&Play</h1>
       </div>
       <div className="links d-flex gap-3">
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/"}><h2><i className="bi bi-house"></i></h2></NavLink>
       </div>
     </div>
   )
