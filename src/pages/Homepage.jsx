@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react"
-import GameCards from "../components/GameCards";
+import HomeCards from "../components/HomeCards";
 import Comparator from "../components/Comparator";
 
 function debounce(callback, delay){
@@ -119,7 +119,7 @@ export default function Homepage(){
             sortedAndFilteredGames.length > 0 ? (
               sortedAndFilteredGames.map(game => (
                 <div key={game.id} className="col-4 p-5">
-                  <GameCards game={game} />
+                  <HomeCards game={game} />
                 </div>
               ))
             ) : (

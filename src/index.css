@@ -1,2 +1,20 @@
 @import url("bootstrap");
 @import url("bootstrap-icons");
+
+a, i:hover{
+  color: white;
+}
+
+.navbar{
+  border-bottom: 1px solid grey;
+  background-color: rgb(226, 226, 226);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card{
+  min-height: 100%;
+}
+
+.game-title:hover{
+  color: brown;
+}
