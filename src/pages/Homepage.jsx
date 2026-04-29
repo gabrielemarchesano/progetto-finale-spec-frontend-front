@@ -1,6 +1,16 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import GameCards from "../components/GameCards";
 import Comparator from "../components/Comparator";
+
+function debounce(callback, delay){
+  let timer;
+  return (value) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      callback(value);
+    }, delay);
+  }
+}
 
 export default function Homepage(){
 
@@ -12,6 +22,12 @@ export default function Homepage(){
   const [ sortBy, setSortBy ] = useState("");
   const [ sortOrder, setSortOrder ] = useState(1);
 
+  const debouncedSearch = useCallback(
+    debounce((value) => {
+      setSearchQuery(value);
+    }, 300),
+    []
+  );
   
   const categories = [];
   games?.forEach(game => {
@@ -64,8 +80,7 @@ export default function Homepage(){
           <input
             type="text"
             placeholder="Cerca un gioco..."
-            value={searchQuery}
-            onChange={(event) => setSearchQuery(event.target.value)}
+            onChange={(event) => debouncedSearch(event.target.value)}
           />
           <select onChange={event => setSelectedCategory(event.target.value)}>
             <option value="">Filtra per categoria</option>
@@ -99,13 +114,19 @@ export default function Homepage(){
 
         <div className="d-flex text-center align-items-center">
           
-          <div className="row">
+          <div className="row w-100">
           {
-            sortedAndFilteredGames.map(game => (
-              <div key={game.id} className="col-4 p-5">
-                <GameCards game={game} />
+            sortedAndFilteredGames.length > 0 ? (
+              sortedAndFilteredGames.map(game => (
+                <div key={game.id} className="col-4 p-5">
+                  <GameCards game={game} />
+                </div>
+              ))
+            ) : (
+              <div className="col-12 p-5">
+                <h2>Nessun risultato trovato</h2>
               </div>
-            ))
+            )
           }
           </div>
 

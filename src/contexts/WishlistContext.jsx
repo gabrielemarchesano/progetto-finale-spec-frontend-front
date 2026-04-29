@@ -12,7 +12,7 @@ const WishlistProvider = ({ children }) => {
     try{
       console.log(gameId)
       const gameDetails = await getGameDetails(gameId);
-      if(gameDetails && !wishlist.find(game => game.id === gameId)){
+      if(gameDetails && !wishlist.some(game => game.id === gameId)){
         setWishlist(prevWishlist => [...prevWishlist, gameDetails]);
       }
     } 
