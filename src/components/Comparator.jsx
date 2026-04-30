@@ -1,10 +1,11 @@
 import { useComparator } from "../contexts/ComparatorContext";
+import ComparisonCard from "./ComparisonCard";
 
 export default function Comparator(){
   const { comparedGames, removeFromCompare } = useComparator();
 
   let className = "";
-  comparedGames.length === 1 ? className = "row row-cols-1" : className = "row row-cols-2"
+  comparedGames.length === 1 ? className = "d-flex row row-cols-1" : className = "container-fluid row row-cols-2"
   return(
     <div className="container text-center">
       {
@@ -15,18 +16,11 @@ export default function Comparator(){
               {
                 comparedGames.map(game => (
                   <div key={game.id}>
-                    <img src={game.imageUrl} alt="" />
-                    <h1>{game.title}</h1>
-                    <p>{game.category}</p>
-                    <p>Piattaforme: {game.platforms.join(", ")}</p>
-                    <p>Genere: {game.genres.join(", ")}</p>
-                    <p>{game.description}</p>
-                    <p>Casa di sviluppo: {game.developer}</p>
-                    <p>Pegi: {game.pegi}</p>
-                    <p>{game.price} €</p>
-                    <p>Data di rilascio: {game.releaseYear}</p>
+                    <div className="text-start my-4">
+                      <ComparisonCard game={game} />
+                    </div>
 
-                    <button onClick={() => removeFromCompare(game.id)}>Rimuovi dal confronto</button>
+                    <button onClick={() => removeFromCompare(game.id)} className="btn btn-danger mt-3 w-100">Rimuovi dal confronto</button>
                   </div>
                 ))
               }

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useGetGameDetails } from "../contexts/GameDetailsContext";
 import { useEffect, useState } from "react";
+import DetailsCard from "../components/DetailsCard";
 
 export default function DetailsPage(){
 
@@ -19,21 +20,10 @@ export default function DetailsPage(){
   }, []);
 
   return(
-    <div>
+    <div className="container py-3">
       {
         gameDetails && (
-          <div>
-            <img src={gameDetails.imageUrl} alt="" />
-            <h1>{gameDetails.title}</h1>
-            <p>{gameDetails.category}</p>
-            <p>Piattaforme: {gameDetails.platforms.join(", ")}</p>
-            <p>Genere: {gameDetails.genres.join(", ")}</p>
-            <p>{gameDetails.description}</p>
-            <p>Casa di sviluppo: {gameDetails.developer}</p>
-            <p>Pegi: {gameDetails.pegi}</p>
-            <p>{gameDetails.price} €</p>
-            <p>Data di rilascio: {gameDetails.releaseYear}</p>
-          </div>
+          <DetailsCard gameDetails={gameDetails} />
         )
       }
     </div>

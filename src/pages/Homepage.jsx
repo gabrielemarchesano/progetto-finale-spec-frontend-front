@@ -81,8 +81,10 @@ export default function Homepage(){
             type="text"
             placeholder="Cerca un gioco..."
             onChange={(event) => debouncedSearch(event.target.value)}
+            className="form-control"
           />
-          <select onChange={event => setSelectedCategory(event.target.value)}>
+
+          <select onChange={event => setSelectedCategory(event.target.value)} className="form-select">
             <option value="">Filtra per categoria</option>
             {
               categories.map((category, index) => (
@@ -92,24 +94,28 @@ export default function Homepage(){
               ))
             }
           </select>
-          <button onClick={() => {
-            setSortBy("title")
-            setSortOrder(sortOrder * -1)
-          }}>
-            Ordina per titolo
-          </button>
-          <button onClick={() => {
-            setSortBy("category")
-            setSortOrder(sortOrder * -1)
-          }}>
-            Ordina per categoria
-          </button>
-          <button onClick={() => {
-            setSortBy("")
-            setSortOrder(1)
-          }}>
-            Reset ordinamento
-          </button>
+
+          <div className="btn-group">
+            <button onClick={() => {
+              setSortBy("title")
+              setSortOrder(sortOrder * -1)
+            }} className="btn btn-secondary">
+              Ordina per titolo
+            </button>
+            <button onClick={() => {
+              setSortBy("category")
+              setSortOrder(sortOrder * -1)
+            }} className="btn btn-secondary">
+              Ordina per categoria
+            </button>
+            <button onClick={() => {
+              setSortBy("")
+              setSortOrder(1)
+            }} className="btn btn-warning">
+              Reset ordinamento
+            </button>
+          </div>
+
         </div>
 
         <div className="d-flex text-center align-items-center">
