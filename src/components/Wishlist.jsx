@@ -7,20 +7,20 @@ export default function Wishlist(){
     <div>
       {
         wishlist.length === 0 ? (
-          <p>La tua lista dei preferiti è vuota.</p>
+          <p className="px-3">La tua lista dei preferiti è vuota.</p>
         ) : (
-          <ul>
+          <div>
             {
               wishlist.map(game => (
-                <li key={game.id}>
+                <div className="wishlist-card card p-3" key={game.id}>
                   <h3>{game.title}</h3>
                   <p>{game.category}</p>
                   <p>{game.price} €</p>
-                  <button onClick={() => removeFromWishlist(game.id)}>Rimuovi dai preferiti</button>
-                </li>
+                  <button className="btn btn-danger w-50 align-self-end" onClick={() => removeFromWishlist(game.id)}>Rimuovi dai preferiti</button>
+                </div>
               ))
             }
-          </ul>
+          </div>
         )
       }
     </div>

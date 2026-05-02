@@ -76,24 +76,26 @@ export default function Homepage(){
     <>
       <div className="container p-5">
         
-        <div className="list-manipulator text-center">
-          <input
-            type="text"
-            placeholder="Cerca un gioco..."
-            onChange={(event) => debouncedSearch(event.target.value)}
-            className="form-control"
-          />
+        <div className="list-manipulator d-flex flex-column align-items-center gap-4">
 
-          <select onChange={event => setSelectedCategory(event.target.value)} className="form-select">
-            <option value="">Filtra per categoria</option>
-            {
-              categories.map((category, index) => (
-                <option key={index} value={category}>
-                  {category}
-                </option>
-              ))
-            }
-          </select>
+          <div className="row gap-1">
+            <input
+              type="text"
+              placeholder="Cerca un gioco..."
+              onChange={(event) => debouncedSearch(event.target.value)}
+              className="form-control"
+            />
+            <select onChange={event => setSelectedCategory(event.target.value)} className="form-select">
+              <option value="">Filtra per categoria</option>
+              {
+                categories.map((category, index) => (
+                  <option key={index} value={category}>
+                    {category}
+                  </option>
+                ))
+              }
+            </select>
+          </div>
 
           <div className="btn-group">
             <button onClick={() => {
@@ -120,11 +122,11 @@ export default function Homepage(){
 
         <div className="d-flex text-center align-items-center">
           
-          <div className="row w-100">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 w-100">
           {
             sortedAndFilteredGames.length > 0 ? (
               sortedAndFilteredGames.map(game => (
-                <div key={game.id} className="col-4 p-5">
+                <div key={game.id} className="p-5">
                   <HomeCards game={game} />
                 </div>
               ))

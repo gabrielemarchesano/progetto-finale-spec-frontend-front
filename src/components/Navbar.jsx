@@ -29,7 +29,7 @@ export default function Navbar(){
             <h5 className="offcanvas-title" id="offcanvasRightLabel">Preferiti</h5>
             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div className="offcanvas-body">
+          <div className="offcanvas-body p-0">
             <Wishlist />
           </div>
         </div>

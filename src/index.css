@@ -5,6 +5,10 @@ a, i:hover{
   color: white;
 }
 
+input, select{
+  width: 200px !important;
+}
+
 .navbar{
   border-bottom: 1px solid grey;
   background-color: rgb(226, 226, 226);
@@ -17,4 +21,9 @@ a, i:hover{
 
 .game-title:hover{
   color: brown;
+}
+
+
+.wishlist-card{
+  border-radius: 0;
 }
