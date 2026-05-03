@@ -23,7 +23,10 @@ input, select{
   color: brown;
 }
 
-
 .wishlist-card{
   border-radius: 0;
+}
+
+.home-cards-btns{
+  width: 100px;
 }

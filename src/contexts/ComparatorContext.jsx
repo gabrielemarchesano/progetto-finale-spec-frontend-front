@@ -17,7 +17,7 @@ const ComparatorProvider = ({ children }) => {
 
   const addToCompare = useCallback(async (gameId) => {
     try {
-      if (comparedGames.length === 2)
+      if (comparedGames.length === 4)
         return;
 
       const gameDetails = await getGameDetails(gameId);

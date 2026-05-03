@@ -14,7 +14,7 @@ export default function ComparisonCard({ game }){
   } = game;
 
   return(
-    <div className="card comparison-card h-100 border-0 shadow-lg" style={{ borderRadius: "20px", overflow: "hidden"}}>
+    <div className="card comparison-card h-100 border-0 shadow-lg d-flex flex-column" style={{ borderRadius: "20px", overflow: "hidden"}}>
 
       <img
         src={imageUrl}
@@ -23,7 +23,7 @@ export default function ComparisonCard({ game }){
         style={{ height: "220px" }}
       />
 
-      <div className="card-body d-flex flex-column p-4">
+      <div className="card-body d-flex flex-column flex-grow-1 p-4">
         <div className="d-flex justify-content-between align-items-start mb-2">
           <span className="badge rounded-pill bg-primary-subtle text-primary px-2 small">
             {category}

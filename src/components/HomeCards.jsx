@@ -11,7 +11,7 @@ function HomeCards({ game }){
   const { comparedGames, addToCompare } = useComparator();
 
   return(
-    <div className="card">
+    <div className="card shadow-sm">
       <div className="card-body py-5">
 
         <Link to={`/games/${game.id}`} className="game-title text-decoration-none text-black">
@@ -21,16 +21,16 @@ function HomeCards({ game }){
         <p>{category}</p>
         <p>{description}</p>
         
-        <div className="buttons">
-          <button onClick={() => addToWishlist(game.id)} className="btn btn-outline-primary">
+        <div className="buttons btn-group gap-3">
+          <button onClick={() => addToWishlist(game.id)} className="home-cards-btns btn btn-outline-primary">
             {
-              wishlist.find(g => g.id === game.id) ? "Gioco già in wishlist" : "Aggiungi alla wishlist"
+              wishlist.find(g => g.id === game.id) ? "Gioco già in wishlist" : "Preferiti"
             }
           </button>
           
-          <button onClick={() => addToCompare(game.id)} className="btn btn-outline-secondary">
+          <button onClick={() => addToCompare(game.id)} className="home-cards-btns btn btn-outline-secondary">
             {
-              comparedGames.find(g => g.id === game.id) ? "Gioco già in confronto" : "Aggiungi al confronto"
+              comparedGames.find(g => g.id === game.id) ? "Gioco già in confronto" : "Confronta"
             }
           </button>
 
