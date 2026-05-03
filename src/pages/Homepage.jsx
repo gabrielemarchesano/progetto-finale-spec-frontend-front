@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useMemo } from "react"
 import HomeCards from "../components/HomeCards";
 import Comparator from "../components/Comparator";
 
@@ -56,21 +56,23 @@ export default function Homepage(){
     fetchGames();
   }, []);
 
-  const sorted = [...games];
-
-  const sortedAndFilteredGames = sorted
-    .sort((a, b) => {
-      if(sortBy === "title"){
-        return sortOrder * a.title.localeCompare(b.title);
-      } else if(sortBy === "category"){
-        return sortOrder * a.category.localeCompare(b.category);
-      }
-    })
-    .filter(game => {
-      const isInTitle = game.title.toLowerCase().includes(searchQuery.toLowerCase());
-      const isInCategory = selectedCategory && game.category === selectedCategory || !selectedCategory;
-      return isInTitle && isInCategory;
-    });
+  
+  const sortedAndFilteredGames = useMemo(() => {
+    const sorted = [...games];
+    return sorted
+      .sort((a, b) => {
+        if(sortBy === "title"){
+          return sortOrder * a.title.localeCompare(b.title);
+        } else if(sortBy === "category"){
+          return sortOrder * a.category.localeCompare(b.category);
+        }
+      })
+      .filter(game => {
+        const isInTitle = game.title.toLowerCase().includes(searchQuery.toLowerCase());
+        const isInCategory = selectedCategory && game.category === selectedCategory || !selectedCategory;
+        return isInTitle && isInCategory;
+      });
+  }, [games, sortBy, sortOrder, searchQuery, selectedCategory])
 
   return(
     <>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useWishlist } from "../contexts/WishlistContext";
 import { useComparator } from "../contexts/ComparatorContext";
 
-export default function HomeCards({ game }){
+function HomeCards({ game }){
   /* console.log(game) */
   const { title, category, description } = game;
   const { wishlist, addToWishlist } = useWishlist();
@@ -39,3 +39,5 @@ export default function HomeCards({ game }){
     </div>
   )
 }
+
+export default React.memo(HomeCards);

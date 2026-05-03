@@ -4,8 +4,8 @@ import ComparisonCard from "./ComparisonCard";
 export default function Comparator(){
   const { comparedGames, removeFromCompare } = useComparator();
 
-  let className = "";
-  comparedGames.length === 1 ? className = "d-flex row row-cols-1" : className = "container-fluid row row-cols-2"
+  const className = `container row row-cols-1 row-cols-md-${comparedGames.length} justify-content-center`
+  
   return(
     <div className="container text-center">
       {

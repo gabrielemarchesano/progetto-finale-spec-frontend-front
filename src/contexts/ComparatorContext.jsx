@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 import { useGetGameDetails } from "./GameDetailsContext";
 
 const ComparatorContext = createContext();
@@ -7,24 +7,24 @@ const ComparatorProvider = ({ children }) => {
   const [ comparedGames, setComparedGames ] = useState([]);
   const { getGameDetails } = useGetGameDetails();
 
-  const addToCompare = async (gameId) => {
-    try{
-      if(comparedGames.length === 2)
+  const addToCompare = useCallback(async (gameId) => {
+    try {
+      if (comparedGames.length === 2)
         return;
 
       const gameDetails = await getGameDetails(gameId);
-      if(gameDetails && !comparedGames.some(game => game.id === gameId)){
+      if (gameDetails && !comparedGames.some(game => game.id === gameId)) {
         setComparedGames(prevCompared => [...prevCompared, gameDetails]);
       }
     }
-    catch(error){
+    catch (error) {
       console.error("Errore nell'aggiunta del gioco alla comparazione", error);
     }
-  }
+  }, [getGameDetails, comparedGames])
 
-  const removeFromCompare = (gameId) => {
+  const removeFromCompare = useCallback(gameId => {
     setComparedGames(prevCompared => prevCompared.filter(game => game.id !== gameId));
-  }
+  }, [])
 
   return(
     <ComparatorContext.Provider value={{ comparedGames, addToCompare, removeFromCompare }}>
