@@ -1,10 +1,18 @@
-import { createContext, useCallback, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { useGetGameDetails } from "./GameDetailsContext";
 
 const WishlistContext = createContext();
 
 const WishlistProvider = ({ children }) => {
-  const [ wishlist, setWishlist ] = useState([]);
+  
+  const [ wishlist, setWishlist ] = useState(() => {
+    const savedWishlist = localStorage.getItem("wishlist");
+    return savedWishlist ? JSON.parse(savedWishlist) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  }, [wishlist])
 
   const { getGameDetails } = useGetGameDetails();
 

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useWishlist } from "../contexts/WishlistContext";
 import { useComparator } from "../contexts/ComparatorContext";
+import React from "react";
+
 
 function HomeCards({ game }){
   /* console.log(game) */

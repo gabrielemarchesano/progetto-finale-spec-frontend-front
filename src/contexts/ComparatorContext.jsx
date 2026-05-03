@@ -1,10 +1,18 @@
-import { createContext, useCallback, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { useGetGameDetails } from "./GameDetailsContext";
 
 const ComparatorContext = createContext();
 
 const ComparatorProvider = ({ children }) => {
-  const [ comparedGames, setComparedGames ] = useState([]);
+  const [ comparedGames, setComparedGames ] = useState(() => {
+    const savedComparedGames = localStorage.getItem("comparedGames");
+    return savedComparedGames ? JSON.parse(savedComparedGames) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("comparedGames", JSON.stringify(comparedGames));
+  }, [comparedGames])
+
   const { getGameDetails } = useGetGameDetails();
 
   const addToCompare = useCallback(async (gameId) => {
