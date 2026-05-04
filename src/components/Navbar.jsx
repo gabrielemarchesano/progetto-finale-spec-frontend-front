@@ -4,6 +4,7 @@ import { useWishlist } from "../contexts/WishlistContext";
 
 export default function Navbar(){
 
+  // Recupero della wishlist
   const { wishlist } = useWishlist();
 
   return(
@@ -24,6 +25,7 @@ export default function Navbar(){
           }
         </a>
 
+        {/* Sezione dei preferiti */}
         <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasRightLabel">Preferiti</h5>

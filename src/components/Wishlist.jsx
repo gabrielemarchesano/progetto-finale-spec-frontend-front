@@ -1,6 +1,8 @@
 import { useWishlist } from "../contexts/WishlistContext";
 
 export default function Wishlist(){
+
+  // Recupero della wishlist e della funzione per rimuovere un gioco dalla lista
   const { wishlist, removeFromWishlist } = useWishlist();
 
   return(

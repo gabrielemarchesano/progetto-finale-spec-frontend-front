@@ -1,5 +1,6 @@
 export default function DetailsCard({ gameDetails }){
 
+  // Destrutturazione delle proprietà del gioco
   const {
     title,
     imageUrl,

@@ -6,8 +6,11 @@ import React from "react";
 
 function HomeCards({ game }){
   /* console.log(game) */
+  // Destrutturazione delle proprietà del gioco
   const { title, category, description } = game;
+  // Recupero della wishlist e della funzione per aggiungere un gioco nella lista
   const { wishlist, addToWishlist } = useWishlist();
+  // Reupero della lista da confrontare e la funzione per aggiungere un gioco alla lista
   const { comparedGames, addToCompare } = useComparator();
 
   return(

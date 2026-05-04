@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback, useMemo } from "react"
 import HomeCards from "../components/HomeCards";
 import Comparator from "../components/Comparator";
 
+// Funzione di debounce generica
 function debounce(callback, delay){
   let timer;
   return (value) => {
@@ -22,6 +23,7 @@ export default function Homepage(){
   const [ sortBy, setSortBy ] = useState("");
   const [ sortOrder, setSortOrder ] = useState(1);
 
+  // Implementazione del debounce per la ricerca
   const debouncedSearch = useCallback(
     debounce((value) => {
       setSearchQuery(value);
@@ -29,6 +31,7 @@ export default function Homepage(){
     []
   );
   
+  // Estrazione delle categorie per non averne doppie
   const categories = [];
   games?.forEach(game => {
     if(!categories.includes(game.category)){
@@ -36,6 +39,7 @@ export default function Homepage(){
     }
   });
 
+  // Fetch dei giochi
   const fetchGames = async () => {
     try{
       const response = await fetch(`${url}/games`);
@@ -52,11 +56,12 @@ export default function Homepage(){
     }
   }
 
+  // Esecuzione del fetch dei giochi al montaggio del componente
   useEffect(() => {
     fetchGames();
   }, []);
 
-  
+  // Filtraggio e ordinamento dei giochi
   const sortedAndFilteredGames = useMemo(() => {
     const sorted = [...games];
     return sorted
@@ -84,7 +89,7 @@ export default function Homepage(){
             <input
               type="text"
               placeholder="Cerca un gioco..."
-              onChange={(event) => debouncedSearch(event.target.value)}
+              onChange={event => debouncedSearch(event.target.value)}
               className="form-control"
             />
             <select onChange={event => setSelectedCategory(event.target.value)} className="form-select">
@@ -100,24 +105,28 @@ export default function Homepage(){
           </div>
 
           <div className="btn-group">
+            
             <button onClick={() => {
               setSortBy("title")
               setSortOrder(sortOrder * -1)
             }} className="btn btn-secondary">
               Ordina per titolo
             </button>
+
             <button onClick={() => {
               setSortBy("category")
               setSortOrder(sortOrder * -1)
             }} className="btn btn-secondary">
               Ordina per categoria
             </button>
+            
             <button onClick={() => {
               setSortBy("")
               setSortOrder(1)
             }} className="btn btn-warning">
               Reset ordinamento
             </button>
+            
           </div>
 
         </div>
@@ -133,7 +142,7 @@ export default function Homepage(){
                 </div>
               ))
             ) : (
-              <div className="col-12 p-5">
+              <div className="col-12 p-5 d-flex justify-content-center w-100">
                 <h2>Nessun risultato trovato</h2>
               </div>
             )

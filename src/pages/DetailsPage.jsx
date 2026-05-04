@@ -10,6 +10,7 @@ export default function DetailsPage(){
   const { getGameDetails } = useGetGameDetails();
 
   const fetchGameDetails = async () => {
+    // Chiamata asincrona per ottenere i dettagli del gioco utilizzando la funzione getGameDetails dal contesto
     const data = await getGameDetails(id);
     //console.log(data)
     setGameDetails(data);

@@ -2,8 +2,10 @@ import { useComparator } from "../contexts/ComparatorContext";
 import ComparisonCard from "./ComparisonCard";
 
 export default function Comparator(){
+  // Recupero dei giochi da confrontare e della funzione per rimuoverli dal confronto dal contesto ComparatorContext
   const { comparedGames, removeFromCompare } = useComparator();
 
+  // Calcolo dinamico del layout in base al numero di giochi da confrontare
   const className = `container row row-cols-1 row-cols-md-2 row-cols-lg-${comparedGames.length} justify-content-center`
   
   return(
