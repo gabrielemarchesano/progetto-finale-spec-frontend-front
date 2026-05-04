@@ -18,8 +18,8 @@ export default function Navbar(){
           <h2 className="m-0 p-0"><i className="bi bi-heart position-relative"></i></h2>
           {
             wishlist.length > 0 && (
-              <span class="position-absolute top-0 start-100 translate-middle badge p-2 bg-danger border border-light rounded-circle">
-                <span class="visually-hidden">New alerts</span>
+              <span className="position-absolute top-0 start-100 translate-middle badge p-2 bg-danger border border-light rounded-circle">
+                <span className="visually-hidden">New alerts</span>
               </span>
             )
           }

@@ -1,7 +1,10 @@
+import { useWishlist } from "../contexts/WishlistContext";
+
 export default function DetailsCard({ gameDetails }){
 
   // Destrutturazione delle proprietà del gioco
   const {
+    id,
     title,
     imageUrl,
     category,
@@ -13,6 +16,9 @@ export default function DetailsCard({ gameDetails }){
     price,
     releaseYear
   } = gameDetails;
+
+  const { wishlist, addToWishlist } = useWishlist();
+  const isFavorite = wishlist.some(game => game.id === id);
 
   return(
     <div className="card border-0 shadow-lg overflow-hidden mx-auto" style={{ maxWidth: "900px", borderRadius: "20px" }}>
@@ -60,7 +66,14 @@ export default function DetailsCard({ gameDetails }){
                 <div className="text-end">
                   <span className="h3 fw-bold text-dark">{price}€</span>
                 </div>
+
               </div>
+              <button
+                onClick={() => addToWishlist(id)}
+                className={`btn w-100 mt-3 ${isFavorite ? 'btn-primary' : 'btn-outline-primary'}`}
+              >
+                {isFavorite ? "Aggiunto nella wishlist" : "Aggiungi ai preferiti"}
+              </button>
             </div>
           </div>
         </div>
