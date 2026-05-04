@@ -1,0 +1,276 @@
+[
+  {
+    "title": "Elden Ring",
+    "category": "RPG",
+    "imageUrl": "/images/1.jpg",
+    "platforms": [
+      "PS5",
+      "Xbox Series X/S",
+      "PC",
+      "PS4"
+    ],
+    "genres": [
+      "Action RPG",
+      "Open World",
+      "Soulslike"
+    ],
+    "releaseYear": 2022,
+    "developer": "FromSoftware",
+    "description": "Un vasto mondo fantasy dove combattere divinità per diventare il Lord Ancestrale.",
+    "pegi": "16",
+    "price": 59.99,
+    "id": 1,
+    "createdAt": "2026-04-23T09:07:36.958Z",
+    "updatedAt": "2026-04-24T14:43:39.768Z"
+  },
+  {
+    "title": "Baldur's Gate 3",
+    "category": "RPG",
+    "imageUrl": "/images/2.jpg",
+    "platforms": [
+      "PC",
+      "PS5",
+      "Xbox Series X/S"
+    ],
+    "genres": [
+      "Turn-based RPG",
+      "Adventure",
+      "Fantasy"
+    ],
+    "releaseYear": 2023,
+    "developer": "Larian Studios",
+    "description": "Basato su Dungeons & Dragons, offre una libertà decisionale senza precedenti.",
+    "pegi": "18",
+    "price": 59.99,
+    "id": 2,
+    "createdAt": "2026-04-23T09:22:12.565Z",
+    "updatedAt": "2026-04-24T15:00:36.520Z"
+  },
+  {
+    "title": "Cyberpunk 2077",
+    "category": "Action",
+    "imageUrl": "/images/3.jpg",
+    "platforms": [
+      "PC",
+      "PS5",
+      "Xbox Series X/S",
+      "PS4"
+    ],
+    "genres": [
+      "Open World",
+      "First-Person Shooter",
+      "RPG"
+    ],
+    "releaseYear": 2020,
+    "developer": "CD Projekt Red",
+    "description": "Un'avventura open world ambientata nella megalopoli futuristica di Night City.",
+    "pegi": "18",
+    "price": 49.99,
+    "id": 3,
+    "createdAt": "2026-04-23T09:23:46.732Z",
+    "updatedAt": "2026-04-24T15:00:55.135Z"
+  },
+  {
+    "title": "The Legend of Zelda: Tears of the Kingdom",
+    "category": "Adventure",
+    "imageUrl": "/images/4.jpg",
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Action-Adventure",
+      "Open World",
+      "Puzzle"
+    ],
+    "releaseYear": 2023,
+    "developer": "Nintendo",
+    "description": "Link esplora i cieli e le profondità di Hyrule con nuovi poteri di costruzione.",
+    "pegi": "12",
+    "price": 69.99,
+    "id": 4,
+    "createdAt": "2026-04-23T09:24:01.812Z",
+    "updatedAt": "2026-04-24T15:01:20.280Z"
+  },
+  {
+    "title": "Hades",
+    "category": "Action",
+    "imageUrl": "/images/5.jpg",
+    "platforms": [
+      "PC",
+      "PS5",
+      "Switch",
+      "Xbox"
+    ],
+    "genres": [
+      "Roguelike",
+      "Hack and Slash",
+      "Indie"
+    ],
+    "releaseYear": 2020,
+    "developer": "Supergiant Games",
+    "description": "Sfida il dio dei morti in un frenetico dungeon crawler ispirato al mito greco.",
+    "pegi": "12",
+    "price": 24.99,
+    "id": 5,
+    "createdAt": "2026-04-23T09:24:14.272Z",
+    "updatedAt": "2026-04-24T15:01:32.059Z"
+  },
+  {
+    "title": "God of War Ragnarök",
+    "category": "Action",
+    "imageUrl": "/images/6.jpg",
+    "platforms": [
+      "PS5",
+      "PS4",
+      "PC"
+    ],
+    "genres": [
+      "Action-Adventure",
+      "Hack and Slash",
+      "Story-driven"
+    ],
+    "releaseYear": 2022,
+    "developer": "Santa Monica Studio",
+    "description": "Kratos e Atreus devono affrontare la fine del mondo nella mitologia norrena.",
+    "pegi": "18",
+    "price": 69.99,
+    "id": 6,
+    "createdAt": "2026-04-23T09:24:25.472Z",
+    "updatedAt": "2026-04-24T15:01:36.885Z"
+  },
+  {
+    "title": "Hogwarts Legacy",
+    "category": "RPG",
+    "imageUrl": "/images/7.jpg",
+    "platforms": [
+      "PC",
+      "PS5",
+      "Xbox Series X/S",
+      "Switch"
+    ],
+    "genres": [
+      "Open World",
+      "Fantasy",
+      "Magic"
+    ],
+    "releaseYear": 2023,
+    "developer": "Avalanche Software",
+    "description": "Vivi la vita da studente a Hogwarts nel XIX secolo in questo RPG d'azione.",
+    "pegi": "12",
+    "price": 59.99,
+    "id": 7,
+    "createdAt": "2026-04-23T09:24:38.937Z",
+    "updatedAt": "2026-04-24T15:01:42.984Z"
+  },
+  {
+    "title": "Helldivers 2",
+    "category": "Shooter",
+    "imageUrl": "/images/8.jpg",
+    "platforms": [
+      "PC",
+      "PS5"
+    ],
+    "genres": [
+      "Third-Person Shooter",
+      "Co-op",
+      "Sci-fi"
+    ],
+    "releaseYear": 2024,
+    "developer": "Arrowhead Game Studios",
+    "description": "Unisciti agli Helldivers per combattere per la libertà in una galassia ostile.",
+    "pegi": "18",
+    "price": 39.99,
+    "id": 8,
+    "createdAt": "2026-04-23T09:25:00.236Z",
+    "updatedAt": "2026-04-24T15:01:50.995Z"
+  },
+  {
+    "title": "Black Myth: Wukong",
+    "category": "Action",
+    "imageUrl": "/images/9.jpg",
+    "platforms": [
+      "PC",
+      "PS5",
+      "Xbox Series X/S"
+    ],
+    "genres": [
+      "Action RPG",
+      "Soulslike",
+      "Mythology"
+    ],
+    "releaseYear": 2024,
+    "developer": "Game Science",
+    "description": "Basato sulla mitologia cinese, segui il viaggio del Predestinato.",
+    "pegi": "16",
+    "price": 59.99,
+    "id": 9,
+    "createdAt": "2026-04-23T09:25:08.956Z",
+    "updatedAt": "2026-04-24T15:01:57.619Z"
+  },
+  {
+    "title": "Resident Evil 4 Remake",
+    "category": "Horror",
+    "imageUrl": "/images/10.jpg",
+    "platforms": [
+      "PC",
+      "PS5",
+      "Xbox Series X/S",
+      "PS4"
+    ],
+    "genres": [
+      "Survival Horror",
+      "Third-Person Shooter",
+      "Remake"
+    ],
+    "releaseYear": 2023,
+    "developer": "Capcom",
+    "description": "Leon S. Kennedy deve salvare la figlia del presidente in un villaggio maledetto.",
+    "pegi": "18",
+    "price": 59.99,
+    "id": 10,
+    "createdAt": "2026-04-23T09:25:25.273Z",
+    "updatedAt": "2026-04-24T15:02:04.867Z"
+  },
+  {
+    "title": "Marvel's Spider-Man 2",
+    "category": "Action",
+    "imageUrl": "/images/11.jpg",
+    "platforms": [
+      "PS5"
+    ],
+    "genres": [
+      "Superhero",
+      "Open World",
+      "Adventure"
+    ],
+    "releaseYear": 2023,
+    "developer": "Insomniac Games",
+    "description": "Peter Parker e Miles Morales affrontano Venom e Kraven a New York.",
+    "pegi": "16",
+    "price": 79.99,
+    "id": 11,
+    "createdAt": "2026-04-23T09:25:38.861Z",
+    "updatedAt": "2026-04-24T15:02:09.403Z"
+  },
+  {
+    "title": "Final Fantasy VII Rebirth",
+    "category": "RPG",
+    "imageUrl": "/images/12.jpg",
+    "platforms": [
+      "PS5"
+    ],
+    "genres": [
+      "Action RPG",
+      "Adventure",
+      "Fantasy"
+    ],
+    "releaseYear": 2024,
+    "developer": "Square Enix",
+    "description": "Il viaggio di Cloud e compagni continua oltre le mura di Midgar.",
+    "pegi": "16",
+    "price": 79.99,
+    "id": 12,
+    "createdAt": "2026-04-23T09:25:45.295Z",
+    "updatedAt": "2026-04-24T15:02:18.825Z"
+  }
+]
