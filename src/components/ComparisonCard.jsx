@@ -1,4 +1,6 @@
-export default function ComparisonCard({ game }){
+import React from "react"
+
+function ComparisonCard({ game }){
 
   // Destrutturazione delle proprietà del gioco
   const {
@@ -44,7 +46,14 @@ export default function ComparisonCard({ game }){
           <h6 className="fw-bold text-uppercase x-small text-secondary">Piattaforme</h6>
           <p className="small mb-0">{platforms?.join(", ")}</p>
         </div>
+
+        <div className="mt-auto text-end">
+          <span className="fw-bold h4">{price}€</span>
+        </div>
+
       </div>
     </div>
   )
 }
+
+export default React.memo(ComparisonCard);
